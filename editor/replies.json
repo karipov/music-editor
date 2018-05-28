@@ -1,0 +1,6 @@
+{
+  "service_replies": {
+    "start" : "Hello! This is a bot that will let you edit music metadata, such as artowork or cover artist.",
+    "help": "Go see my <a href='https://github.com/karipov/music-editor'>insides</a>."
+  }
+}
