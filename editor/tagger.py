@@ -1,5 +1,5 @@
 from mutagen.mp3 import MP3
-from mutagen.id3 import ID3, APIC, TPE1, TALB
+from mutagen.id3 import ID3, APIC, TPE1, TALB, TIT2
 
 # EXAMPLE PATHS AND NAMES:
 # song = 'samples/songs/Anthony Russo - California.mp3'
@@ -40,4 +40,16 @@ def add_artist(song_path, artist_name):
     audio.save()
 
 def add_name(song_path, track_name):
-    pass
+    """ Add a name to a given song path
+    """
+
+    audio = MP3(song_path, ID3=ID3)
+
+    audio.tags.add(
+        TIT2(
+            encoding=3,
+            text=track_name
+        )
+    )
+
+    audi0.save()
