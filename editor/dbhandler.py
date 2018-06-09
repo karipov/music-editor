@@ -3,7 +3,7 @@ import os
 
 class Database():
     def __init__(self, data_folder='files'):
-        self.dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.dir = os.path.dirname(os.path.dirname(__file__))
         self.data_folder = data_folder
         self.absolute_path = os.path.join(self.dir, self.data_folder)
 
@@ -17,6 +17,12 @@ class Database():
         if not os.path.exists(user_path):
             os.mkdir(user_path)
 
+    def add_song_file():
+        pass
+
+    def add_album_file():
+        pass
+
 # # test
-# db = Database()
+# db = Database(data_folder='samples')
 # db.create_folder(316)

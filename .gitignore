@@ -1,5 +1,5 @@
 # Configuration files
-editor/conf.ini
+configure/conf.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

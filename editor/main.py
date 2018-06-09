@@ -1,23 +1,35 @@
 import json
 import configparser
+import os
 import telebot
 
 import parser
 import tagger
 from dbhandler import Database
 
-# TODO: DEFINE PROPERLY THE CONF AND REPLIES FILE LOCATIONS
+
 # unpack config file
+config_path = os.path.join(os.path.dirname(
+                           os.path.dirname(__file__)),
+                           'configure/conf.ini'
+
 config = configparser.ConfigParser()
-config.read('editor/conf.ini')
+config.read(config_path)
 KEY = config['DEFAULT']['key']
 
-# unpack string list
-with open('editor/replies.json') as string_data:
+
+# unpack string list file
+replies_path = os.path.join(os.path.dirname(
+                            os.path.dirname(__file__)),
+                            'configure/replies.json'
+                            )
+
+with open(replies_path) as string_data:
     REPLIES = json.load(string_data)
 
 # create bot class
 bot = telebot.TeleBot(token=KEY)
+
 
 
 # service message handlers
