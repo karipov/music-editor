@@ -17,11 +17,16 @@ class Database():
         if not os.path.exists(user_path):
             os.mkdir(user_path)
 
-    def add_song_file():
-        pass
+    def add_file(self, downloaded_file, user_id, song=False, img=False):
+        if img:
+            name = 'image.jpg'
+        elif song:
+            name = 'song.mp3'
 
-    def add_album_file():
-        pass
+        down_path = os.path.join(self.absolute_path, str(user_id), name)
+
+        with open(down_path, 'wb') as file_obj:
+            file_obj.write(downloaded_file)
 
 # # test
 # db = Database(data_folder='samples')
